@@ -1,31 +1,21 @@
-const hourHand = document.getElementById('hour');
-const minuteHand = document.getElementById('minute');
-const secondHand = document.getElementById('second');
+const { set } = require("express/lib/response");
 
-function updateClock() {
-    const now = new Date();
-    const seconds = now.getSeconds();
-    const minutes = now.getMinutes();
-    const hours = now.getHours();
+const secondHand = document.querySelector('.second');
+const minuteHand = document.querySelector('.minute');
+const hourHand = document.querySelector('.hour');
 
-    const secondDeg = seconds * 6;
-    const minuteDeg = minutes * 6 + seconds * 0.1;
-    const hourDeg = (hours % 12) * 30 + minutes * 0.5;
+const updateTime = () => {
+    let date = new Date(),
+        secToDeg = (date.getSeconds() / 60) * 360,
+        minToDeg = (date.getMinutes() / 60) * 360 + (secToDeg / 60),
+        hrToDeg = (date.getHours() % 12) * 30 + (minToDeg / 12);
 
-    secondHand.style.transform = `rotate(${secondDeg}deg)`;
-    minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
-    hourHand.style.transform = `rotate(${hourDeg}deg)`;
-}
+    secondHand.style.transform = `rotate(${secToDeg}deg)`;
+    minuteHand.style.transform = `rotate(${minToDeg}deg)`;
+    hourHand.style.transform = `rotate(${hrToDeg}deg)`;
+};
 
-setInterval(updateClock, 1000);
-updateClock();
+setInterval(updateTime, 1000);
+updateTime();
 
 
-const marksContainer = document.querySelector('.marks');
-
-for (let i = 0; i < 60; i++) {
-    const mark = document.createElement('div');
-    mark.className = 'mark';
-    mark.style.transform = `rotate(${i * 6}deg) translateY(-145px)`;
-    marksContainer.appendChild(mark);
-}

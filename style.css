@@ -59,6 +59,11 @@ body {
     z-index: 3;
 }
 
+.hand.minute {
+    width: 4px;
+    height: 140px;
+    z-index: 4;
+}
 
 .hand.second {
     width: 2px;

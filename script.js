@@ -1,21 +1,11 @@
-const { set } = require("express/lib/response");
+const secondHand = document.getElementById('secondHand');
 
-const secondHand = document.querySelector('.second');
-const minuteHand = document.querySelector('.minute');
-const hourHand = document.querySelector('.hour');
+function updateClock() {
+    const now = new Date();
+    const seconds = now.getSeconds();
+    const degrees = (seconds / 60) * 360;
+    secondHand.style.transform = `translateX(-50%) rotate(${degrees}deg)`;
+}
 
-const updateTime = () => {
-    let date = new Date(),
-        secToDeg = (date.getSeconds() / 60) * 360,
-        minToDeg = (date.getMinutes() / 60) * 360 + (secToDeg / 60),
-        hrToDeg = (date.getHours() % 12) * 30 + (minToDeg / 12);
-
-    secondHand.style.transform = `rotate(${secToDeg}deg)`;
-    minuteHand.style.transform = `rotate(${minToDeg}deg)`;
-    hourHand.style.transform = `rotate(${hrToDeg}deg)`;
-};
-
-setInterval(updateTime, 1000);
-updateTime();
-
-
+setInterval(updateClock, 1000);
+updateClock();

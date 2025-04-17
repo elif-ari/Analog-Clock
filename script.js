@@ -1,10 +1,24 @@
 const secondHand = document.querySelector('.second');
 const minuteHand = document.querySelector('.minute');
 const hourHand = document.querySelector('.hour');
+const modeSwitch = document.querySelector(".mode-switch");
+const body = document.body; // ✅ body DOM olarak seçildi
+
+// ✅ Dark mode kontrolü
+if (localStorage.getItem("mode") === "Dark Mode") {
+    body.classList.add("dark");
+    modeSwitch.textContent = "Light Mode";
+}
+
+modeSwitch.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    const isDarkMode = body.classList.contains("dark");
+    modeSwitch.textContent = isDarkMode ? "Light Mode" : "Dark Mode";
+    localStorage.setItem("mode", isDarkMode ? "Dark Mode" : "Light Mode");
+});
 
 function updateClock() {
     const now = new Date();
-
     const seconds = now.getSeconds();
     const minutes = now.getMinutes();
     const hours = now.getHours();

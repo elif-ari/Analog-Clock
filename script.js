@@ -1,10 +1,10 @@
-const secondHand = document.querySelector('.second');
-const minuteHand = document.querySelector('.minute');
-const hourHand = document.querySelector('.hour');
-const modeSwitch = document.querySelector(".mode-switch");
-const body = document.body; // ✅ body DOM olarak seçildi
+const body = document.querySelector("body"),
+    secondHand = document.querySelector('.second'),
+    minuteHand = document.querySelector('.minute'),
+    hourHand = document.querySelector('.hour'),
+    modeSwitch = document.querySelector(".mode-switch");
 
-// ✅ Dark mode kontrolü
+// İlk yüklemede dark mode kontrolü
 if (localStorage.getItem("mode") === "Dark Mode") {
     body.classList.add("dark");
     modeSwitch.textContent = "Light Mode";

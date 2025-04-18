@@ -101,3 +101,33 @@ body {
     transform: translateX(-50%);
     z-index: 10;
 }
+
+body.dark {
+    background: #18191a;
+}
+
+body.dark .container.clock {
+    background: #242526;
+    box-shadow: 0 15px 25px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .container.clock label span {
+    color: #f5f6f7;
+}
+
+body.dark .hand {
+    background-color: #f5f6f7;
+}
+
+body.dark .second {
+    background-color: #e74c3c;
+}
+
+body.dark .indicator {
+    background-color: #e74c3c;
+}
+
+body.dark .mode-switch {
+    background: #f5f6f7;
+    color: #18191a;
+}

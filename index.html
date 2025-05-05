@@ -2,39 +2,80 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Saat</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dünya Saatleri</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container clock">
-        <!-- Saat numaraları -->
-        <label style="--i: 1"><span>1</span></label>
-        <label style="--i: 2"><span>2</span></label>
-        <label style="--i: 3"><span>3</span></label>
-        <label style="--i: 4"><span>4</span></label>
-        <label style="--i: 5"><span>5</span></label>
-        <label style="--i: 6"><span>6</span></label>
-        <label style="--i: 7"><span>7</span></label>
-        <label style="--i: 8"><span>8</span></label>
-        <label style="--i: 9"><span>9</span></label>
-        <label style="--i: 10"><span>10</span></label>
-        <label style="--i: 11"><span>11</span></label>
-        <label style="--i: 12"><span>12</span></label>
 
-        <!-- Akrep, yelkovan, saniye -->
-        <div class="hand hour"></div>
-        <div class="hand minute"></div>
-        <div class="hand second"></div>
+    <div class="clock-wrapper">
+        <!-- Saat 1 -->
+        <div class="clock-container">
+            <div class="container clock">
+                <div class="hand hour"></div>
+                <div class="hand minute"></div>
+                <div class="hand second"></div>
+                <div class="indicator"></div>
 
-        <!-- Merkez noktası -->
-        <div class="indicator"></div>
+                <!-- Saat sayıları -->
+                <label style="--i:1"><span>1</span></label>
+                <label style="--i:2"><span>2</span></label>
+                <label style="--i:3"><span>3</span></label>
+                <label style="--i:4"><span>4</span></label>
+                <label style="--i:5"><span>5</span></label>
+                <label style="--i:6"><span>6</span></label>
+                <label style="--i:7"><span>7</span></label>
+                <label style="--i:8"><span>8</span></label>
+                <label style="--i:9"><span>9</span></label>
+                <label style="--i:10"><span>10</span></label>
+                <label style="--i:11"><span>11</span></label>
+                <label style="--i:12"><span>12</span></label>
+            </div>
+            <select class="city-select">
+                <option value="UTC">UTC</option>
+                <option value="Europe/Istanbul">İstanbul</option>
+                <option value="America/New_York">New York</option>
+                <option value="Asia/Tokyo">Tokyo</option>
+                <option value="Europe/London">Londra</option>
+                <option value="Australia/Sydney">Sidney</option>
+            </select>
+        </div>
 
-        <div class="mode-switch">Dark Mode</div>
+        <!-- Saat 2 -->
+        <div class="clock-container">
+            <div class="container clock">
+                <div class="hand hour"></div>
+                <div class="hand minute"></div>
+                <div class="hand second"></div>
+                <div class="indicator"></div>
 
+                <!-- Saat sayıları -->
+                <label style="--i:1"><span>1</span></label>
+                <label style="--i:2"><span>2</span></label>
+                <label style="--i:3"><span>3</span></label>
+                <label style="--i:4"><span>4</span></label>
+                <label style="--i:5"><span>5</span></label>
+                <label style="--i:6"><span>6</span></label>
+                <label style="--i:7"><span>7</span></label>
+                <label style="--i:8"><span>8</span></label>
+                <label style="--i:9"><span>9</span></label>
+                <label style="--i:10"><span>10</span></label>
+                <label style="--i:11"><span>11</span></label>
+                <label style="--i:12"><span>12</span></label>
+            </div>
+            <select class="city-select">
+                <option value="UTC">UTC</option>
+                <option value="Europe/Istanbul">İstanbul</option>
+                <option value="America/New_York">New York</option>
+                <option value="Asia/Tokyo">Tokyo</option>
+                <option value="Europe/London">Londra</option>
+                <option value="Australia/Sydney">Sidney</option>
+            </select>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 
